@@ -1,0 +1,115 @@
+import java.util.*;
+public class Tictactoe {
+    private static final int ROWS = 3;
+    private static final int COLUMNS = 3;
+    private String[][] board;
+    //construct an empty board
+    public Tictactoe()
+     
+    import javax.swing.JoptionPane;
+
+public class TTT {
+
+ public static void main(String args[]) {
+  boolean bPlaying = true;
+  String sBoard = "";
+  String Cell1 = "1", Cell2 = "2", Cell3 = "3", Cell4 = "5";
+   String Cell6 = "6", Cell7 = "7", Cell8 = "8", Cell7 = "9";
+  String sUserMove;
+  do {
+   sBoard = Cell+ "|" + Cell2 + "|" + Cell3 +"\n";
+    sBoard = sBoard + "--|--|--\n";
+   sBoard = sBoard + Cell4 + "|" + Cell5 + "|" + Cell6 +"\n";
+
+   sBoard = sBoard + "Enter Number between 1 and 9:";
+
+    sUserMove = JOptionPane.ShowInputDiaLog(sBoard);
+
+if(sUserMove.equalsIgnoreCase("1"))
+
+
+    {
+
+if ( ! Cell1.equals("1")))
+
+ 
+
+//Sorry bad move
+
+ }
+
+}
+
+else 
+
+{
+
+Cell1="x";
+
+bInvalidMove = false;
+
+}
+
+else if(sUserMove.equalsIgnoreCase("2")) Cell2="x";
+
+}while (bInvalidMove);
+ 
+
+        board = new String[ROWS][COLUMNS];
+        //Fill with spaces
+        for(int i = 0; i < ROWS; i++)
+        {
+            for(int j = 0; j < COLUMNS; j++)
+            {
+                board[i][j] = " ";
+             }
+        }
+    }
+    //set the fields in the board
+    public void set(int i, int j, String player)
+    {
+        if(board[i][j].equals(" "))
+        {
+            board[i][j] = player;
+         }
+    }
+    /**creates a string representation of the board
+     * @return the string representation
+     */
+    public String toString()
+    {
+        String r = "";
+        for(int i = 0; i < ROWS; i++)
+         {
+          r += "|";
+            for(int j = 0; j < COLUMNS; j++)
+            {
+                r += board[i][j];
+            }
+          r += "|\n";
+        }
+      return r;
+     }
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        String player = "x";
+        Tictactoe game = new Tictactoe();
+        boolean done = false;
+         while(!done)
+        {
+            System.out.println(game.toString());
+            System.out.println("Row for "+player+" (-1 to exit): ");
+            int row = in.nextInt();
+            if(row < 0) done = true;
+             else
+            {
+                System.out.println("Column for "+player+": ");
+                int column = in.nextInt();
+                game.set(row, column, player);
+                if(player.equals("x")) player = "o";
+                 else player = "x";
+            }
+        }
+    }
+}
